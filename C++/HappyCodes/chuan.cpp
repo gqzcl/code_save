@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 const int MAXSTRLEN=255;
-typedef unsigned char SString[MAXSTRLEN+1];
+typedef char SString[MAXSTRLEN+1];
 int Index(SString S,SString T,int pos){
     int i=pos;
     int j=1;
@@ -40,16 +40,18 @@ bool Concat(SString &T,SString S1,SString S2){
 }
 int main(){
     SString T,S1,S2;
-    S1[0]=10;
-    S2[0]=10;
-    for(int i=1;i<=10;i++)
-        cin>>S1[i];
-    for(int i=1;i<=10;i++)
-        cin>>S2[i];
+    int i=1;
+    while(scanf("%c",&S1[i])==1&&S1[i]!='\n')
+        i++;
+    int j=1;
+    while(scanf("%c",&S2[j])==1&&S2[j]!='\n')
+        j++;
+    S1[0]=i-1;
+    S2[0]=j-1;
     if(Concat(T,S1,S2)){
         for(int i=1;i<=T[0];i++)
             cout<<T[i];
     }
     cout<<endl;
-    cout<<Index(S1,S2,0)<<endl;
+    cout<<Index(S1,S2,0)-1<<endl;
 }
