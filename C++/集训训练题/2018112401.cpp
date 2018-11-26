@@ -19,8 +19,12 @@ int main(){
             if(s[i]!=s[len-i-1])
                 flag=0;
         }
-        if(flag)
-            cout<<"YES"<<endl;
+        if(flag){
+            if(len%2)
+                cout<<"YES"<<endl;
+            else
+                cout<<"NO"<<endl;
+        }     
         else{
             int k=0;
             int flag2=1;
