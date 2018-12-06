@@ -1,0 +1,29 @@
+import java.util.Random;
+
+public class Selection<T extends Comparable<T>> extends Sort<T>{
+
+    @Override
+    public void sort(T[] nums){
+        int N=nums.length;
+        for(int i=0;i<N-1;i++){
+            int min=i;
+            for(int j=i+1;j<N;j++){
+                if(less(nums[j],nums[min])){
+                    min=j;
+                }
+            }
+            swap(nums,i,min);
+        }
+    }
+    public static void main(String[] args) {
+        Selection<Integer> S=new Selection<Integer>();
+        Integer[] nums=new Integer[1000];
+        for(int i=0;i<1000;i++){
+            nums[i]=(int)(1000*Math.random());
+        }
+        S.sort(nums);
+        for(int i=0;i<1000;i++){
+            System.out.println(nums[i]+' ');
+        }
+    }
+}

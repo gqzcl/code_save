@@ -6,6 +6,26 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UpDownMergeSort",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "UpDownMergeSort",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DownUpMergeSort",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "DownUpMergeSort",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ScannerKeyBoardTest",
             "request": "launch",
             "cwd": "${workspaceFolder}",

@@ -31,19 +31,14 @@ void CreateBiTree(BiTree &T){
 //     return;
 // }
 void PreOrderTraverse(BiTree T){
-    stack<BiTNode> S;
+    stack<BiTree> S;
     int i=0;
-    //T=NULL;
     S.push(T);
-    //cout<<S.top();
-    //cout<<S.empty();
     while(!S.empty()){
         while(S.top()){
             S.push(S.top()->lchild);
-            //cout<<S.top();
         }
-        //cout<<i++;
-        while(!S.top()){
+        if(!S.top()){
             S.pop();
             cout<<'#';
         }
