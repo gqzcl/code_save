@@ -1,25 +1,12 @@
 package com.a51work6.jpetstore.ui;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-
-import java.awt.Font;
-import javax.swing.SwingConstants;
 
 import com.a51work6.jpetstore.dao.AccountDao;
 import com.a51work6.jpetstore.dao.mysql.AccountDaoImp;
 import com.a51work6.jpetstore.domain.Account;
 
-import java.awt.FlowLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
 
-import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import java.awt.CardLayout;
-import net.miginfocom.swing.MigLayout;
 
 public class LoginFrame extends MyFrame {
 	
@@ -53,6 +40,7 @@ public class LoginFrame extends MyFrame {
 		txtPassword=new JPasswordField(10);
 		txtPassword.setBounds(179,82,125,24);
 		getContentPane().add(txtPassword);
+		txtPassword.setColumns(10);
 		
 		JButton btnOK=new JButton("\u786E\u5B9A");
 		//µÇÂ¼´¦Àí
@@ -87,7 +75,7 @@ public class LoginFrame extends MyFrame {
 			System.exit(0);
 		});
 		btnCancel.setFont(new Font("Microsoft YaHei UI",Font.PLAIN,15));
-		btnCancel.setBounds(71,132,97,38);
+		btnCancel.setBounds(223,132,97,38);
 		getContentPane().add(btnCancel);
 		
 	

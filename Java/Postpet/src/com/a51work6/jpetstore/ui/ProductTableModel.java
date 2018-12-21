@@ -1,10 +1,9 @@
 package com.a51work6.jpetstore.ui;
 
-import java.util.List;
+import com.a51work6.jpetstore.domain.Product;
 
 import javax.swing.table.AbstractTableModel;
-
-import com.a51work6.jpetstore.domain.Product;
+import java.util.List;
 
 
 public class ProductTableModel extends AbstractTableModel {

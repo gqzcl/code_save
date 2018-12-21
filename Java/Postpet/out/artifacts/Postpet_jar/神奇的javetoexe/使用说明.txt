@@ -1,0 +1,67 @@
+
+本说明只是基于用java的GUI程序.
+
+用myeclipse将项目myswt做成jar包myswt.jar（见注释1）
+或用netbeans将项目myswt做成jar包myswt.jar（见注释2）
+
+在你安装jre的机子上你可以直接双击运行myswt.jar
+但是在客户机上没有安装jre时，是不能运行myswt.jar包的
+此说明将教你如何将myswt.jar文件转化成myswt.exe文件，并且在客户端没有安装jre时双击myswt.exe就能运行。
+
+第一步
+  1 新建一个文件夹myapplication,用于存放你即将完成的打包好的应用程序
+  2 将刚刚生成的myswt.jar包和jre(jre由于过大没有填到附件中，望读者原谅)这两个文件复制到myapplication中（如果你的项目使用了其他资源的话，都一同复制到myapplication中）
+  3 解压附件中的JavaLauncher.zip，目录结构如下：
+          source目录包含了JavaLauncher的源程序，是用C语言写的
+          changes.txt是新版的修改说明
+          launch.exe是主程序
+          launcher.cfg是配置文件
+          readme.txt是一些说明和示例
+    我们只需要launch.exe、launcher.cfg两个文件，将这两个文件复制到myapplication文件夹里。launcher.cfg是一个仅三行内容的文本文件，将它修改如下：
+
+    （1） .
+    （2）.\java1.4.2\jre\bin\javaw.exe 
+    （3）-jar myswt.jar
+
+      第一行设置指向JAR包myswt.jar的目录，由于launch.exe和myswt.jar同在一个目录，所以用“.”即当前目录。
+      第二行设置指向jre\bin\javaw.exe的路径。在第2步中已将jre目录复制到了myapplication下
+
+      配置好launcher.cfg后，双击launch.exe即可运行java应用程序。
+第二步
+2、美化图标
+  launch.exe文件的图标太单调了，让我们给它换个好看点的。用Resource Hacker工具来替换launch.exe的图标的步骤如下：
+  解压附件中的rh_chinese_gb.zip，
+  1 运行ResHacker.exe，进入主界面
+
+  2 单击主菜单“文件→打开”，将launch.exe载入到程序中
+
+  3 载入Lanunch.exe之后的界面，选择左边的“图标→1→1030”，然后右键单击“1030”项，选择“替换资源…”。在弹出窗口中单击“打开新图标文件”，选择一个满意的图标，然后单击“替换”按钮。
+
+    附注：图标文件可以是exe、dll、res、ico，该软件可以从exe、dll、res抽取出图标
+
+  4 选择“文件→另存为”，存到myapplication目录下，取名myswt.exe。
+
+
+  5 可见myswt.exe（也就是launch.exe改了个名称）的图标换成了新图标。双击myswt.exe即可运行Java应用程序。
+
+
+注释
+
+  注释1：
+       下载附件中的net.sf.fjep.fatjar_0.0.31.zip然后解压，将其中的plugins文件夹复制到myeclipse安装目录下的eclipse文件夹中（全部覆盖），然后重新启动myeclipse
+右击你要打包的项目，就会出现build fat jar选项，选择它，出现一个窗口，然后填写jar-name（你要生成jar包的名字），选择Main-Class（主类），单击完成就可以了，jar包就生成在了你的项目文件夹中
+
+  注释2：进入netbeans主界面，运行->输出主项目，就生成了可执行jar包，导航到该项目的list目录下，jar包就存在其中
+
+
+有什么问题可以给我留言 http://blog.csdn.net/xingxing_aibiancheng
+       
+
+
+
+
+
+
+
+
+

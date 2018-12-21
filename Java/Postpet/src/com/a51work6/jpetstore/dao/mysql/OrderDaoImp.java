@@ -1,15 +1,14 @@
 package com.a51work6.jpetstore.dao.mysql;
 
+import com.a51work6.jpetstore.dao.OrderDao;
+import com.a51work6.jpetstore.domain.Order;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.a51work6.jpetstore.dao.OrderDao;
-import com.a51work6.jpetstore.domain.Order;    
-import com.a51work6.jpetstore.domain.Product;
 
 public class OrderDaoImp implements OrderDao {
 

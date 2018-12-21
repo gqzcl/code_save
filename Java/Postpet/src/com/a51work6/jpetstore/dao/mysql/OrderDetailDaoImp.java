@@ -1,14 +1,12 @@
 package com.a51work6.jpetstore.dao.mysql;
 
+import com.a51work6.jpetstore.domain.OrderDetail;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-
-import com.a51work6.jpetstore.domain.OrderDetail;
-import com.a51work6.jpetstore.domain.Product;
 
 public class OrderDetailDaoImp implements com.a51work6.jpetstore.dao.OrderDetailDao {
 
@@ -24,7 +22,7 @@ public class OrderDetailDaoImp implements com.a51work6.jpetstore.dao.OrderDetail
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		
-		String sql="select orderid,productid,quantity,unitcost from ordersdetail where orderid=? and productid=?";
+		String sql="select orderid,productid,quantity,unitcost from ordersdetial where orderid=? and productid=?";
 		
 		try {
 			//2.创建数据库连接
@@ -83,7 +81,7 @@ public class OrderDetailDaoImp implements com.a51work6.jpetstore.dao.OrderDetail
 	@Override
 	public int creat(OrderDetail orderDetail) {
 
-		String sql="insert into orderdetail(orderid,productid,quantity,unitcost) values (?,?,?,?)";
+		String sql="insert into ordersdetial(orderid,productid,quantity,unitcost) values (?,?,?,?)";
 		
 		try(//2.创建数据库连接
 				Connection conn=DBHelper.getConnection();

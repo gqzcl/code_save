@@ -1,30 +1,13 @@
 package com.a51work6.jpetstore.ui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.Panel;
-import java.util.HashMap;
-import java.util.List;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
-import javax.swing.JSplitPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingConstants;
-
 import com.a51work6.jpetstore.dao.Productdao;
 import com.a51work6.jpetstore.dao.mysql.ProductDaoImp;
 import com.a51work6.jpetstore.domain.Product;
-import com.sun.javafx.collections.MappingChange.Map;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.HashMap;
+import java.util.List;
 
 public class ProductListFrame extends MyFrame {
 
@@ -156,6 +139,7 @@ public class ProductListFrame extends MyFrame {
 				//更新右侧面板
 				Product p=products.get(selectRow);
 				String petImage=String.format("/images/%s", p.getImage());
+				//System.out.println(petImage);
 				ImageIcon icon=new ImageIcon(ProductListFrame.class.getResource(petImage));
 				lblImage.setIcon(icon);
 				
@@ -244,8 +228,9 @@ public class ProductListFrame extends MyFrame {
 		JButton btnCheck=new JButton("\u67E5\u770B\u8D2D\u7269\u7269\u8F66");
 		//查看购物车
 		btnCheck.addActionListener(e->{
-			//TODO
-			
+			CartFrame frame=new CartFrame(cart,this);
+			frame.setVisible(true);
+			this.setVisible(false);
 		});
 		btnCheck.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 15));
 		detailPanel.add(btnCheck);

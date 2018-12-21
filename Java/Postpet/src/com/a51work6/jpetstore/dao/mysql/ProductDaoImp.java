@@ -1,5 +1,8 @@
 package com.a51work6.jpetstore.dao.mysql;
 
+import com.a51work6.jpetstore.dao.Productdao;
+import com.a51work6.jpetstore.domain.Product;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,15 +10,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.a51work6.jpetstore.dao.Productdao;
-import com.a51work6.jpetstore.domain.Product;
-
 public class ProductDaoImp implements Productdao {
 
 	@Override
 	public List<Product> findAll() {
 		
-		String sql="select productid,category,cname,ename,image,listprice,unitcost,descn from product";
+		String sql="select productid,category,cname,ename,image,listprice,unitcost,descn from product=？";
 		
 		List<Product> list=new ArrayList<Product>();
 		
@@ -57,8 +57,10 @@ public class ProductDaoImp implements Productdao {
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		
-		String sql="select productid,category,cname,ename,image,listprice,unitcost,descn from product where category=?";
+		Product p=new Product();
+		String sql="select productid,category,cname,ename,image,descn,listprice,unitcost from product where productid=?";
+
+		//String sqll="select userid,password,email,name,addr,city,country,phone from account where userid=?";
 		
 		try {
 			//2.创建数据库连接
@@ -67,13 +69,17 @@ public class ProductDaoImp implements Productdao {
 			pstmt=conn.prepareStatement(sql);
 			//4.绑定参数
 			pstmt.setString(1,id);
+			//System.out.println(id);
 			//5.执行查询
 			rs=pstmt.executeQuery();
 			//6.遍历结果类
+
+			//System.out.println("success");
+			//System.out.println(rs.next());
+
 			if(rs.next()) {
 				
-				Product p=new Product();
-				
+				//System.out.println("hava");
 				p.setProductid(rs.getString("productid"));
 				p.setCategory(rs.getString("category"));
 				p.setCname(rs.getString("cname"));
@@ -112,7 +118,7 @@ public class ProductDaoImp implements Productdao {
 			}
 		}
 		
-		return null;
+		return p;
 	}
 	
 	@Override

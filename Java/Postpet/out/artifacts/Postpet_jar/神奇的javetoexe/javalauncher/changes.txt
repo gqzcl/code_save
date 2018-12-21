@@ -1,0 +1,33 @@
+Changes made to v1.22 sep 9th 2003
+-----------------------------------------------
+* Fixed bug in that caused launcher.cfg not to run
+if the specified cfg file was not found.
+
+Changes made to v1.21 nov 4th 2002
+----------------------------------------------
+* Fixed small bug (line 87 in the source) that could 
+cause garbled error messages to be printed out. Thanks
+to Dennis Brake for pointing this out.
+
+Changes made to v1.20 jul 26th 2002
+---------------------------------------------
+* Added support multiple launcher.cfg files. Now the system
+first looks for a file with the same extension as the .exe
+file but with a .cfg extension instead. If it was not found
+the regular launcher.cfg file will be used instead. This allows
+several .exe files with different configurations to be placed
+in the same directory - something that was impossible before.
+
+Changes made to v1.11 jun 16th 2002
+----------------------------------------------
+* Added a description to an error message in readme.txt.
+This description was forgotten when readme.txt was originally
+written.
+
+Changes made to v1.10 jan 25th 2002
+----------------------------------------------
+
+* Arguments passed to the exe will now be passed on to the java
+program.
+* Cleaned up some of the documentation and added a troubleshooting
+section.

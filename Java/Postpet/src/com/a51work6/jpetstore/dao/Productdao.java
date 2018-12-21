@@ -1,8 +1,8 @@
 package com.a51work6.jpetstore.dao;
 
-import java.util.List;
-
 import com.a51work6.jpetstore.domain.Product;
+
+import java.util.List;
 
 public interface Productdao {
 

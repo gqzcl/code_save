@@ -30,23 +30,26 @@ void CreateBiTree(BiTree &T){
 //     }    
 //     return;
 // }
-void PreOrderTraverse(BiTree T){
-    stack<BiTree> S;
-    int i=0;
-    S.push(T);
-    while(!S.empty()){
-        while(S.top()){
-            S.push(S.top()->lchild);
+void PreOrderTraverse(BiTree root)      //非递归中序遍历
+{
+    stack<BiTree> s;
+    BiTree p=root;
+    while(p!=NULL||!s.empty())
+    {
+        while(p!=NULL)
+        {
+            s.push(p);
+            p=p->lchild;
+            cout<<"#";
         }
-        if(!S.top()){
-            S.pop();
-            cout<<'#';
+        if(!s.empty())
+        {
+            p=s.top();
+            cout<<p->data;
+            s.pop();
+            p=p->rchild;
         }
-        cout<<S.top()->data;
-        S.top()=S.top()->rchild;
-        
-    }
-    return;
+    }    
 }
 //AB0CD000E0FGH00K000
 

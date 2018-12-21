@@ -1,13 +1,13 @@
 package com.a51work6.jpetstore.dao.mysql;
 
+import com.a51work6.jpetstore.dao.AccountDao;
+import com.a51work6.jpetstore.domain.Account;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
-import com.a51work6.jpetstore.dao.AccountDao;
-import com.a51work6.jpetstore.domain.Account;
 
 public class AccountDaoImp implements AccountDao {
 
@@ -33,9 +33,11 @@ public class AccountDaoImp implements AccountDao {
 			//3.创建语句对象
 			pstmt=conn.prepareStatement(sql);
 			//4.绑定参数
-			pstm.setString(1,userid);
+			pstmt.setString(1,userid);
 			//5.执行查询
 			rs=pstmt.executeQuery();
+			//System.out.println("success");
+			//System.out.println(rs.next());
 			//6.遍历结果类
 			if(rs.next()) {
 				
